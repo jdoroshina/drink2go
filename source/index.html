@@ -56,10 +56,11 @@
     <main class="index">
       <h1 class="page__hidden">Drink2Go&nbsp;&mdash; интернет&#8209;магазин по&nbsp;продаже кофейных напитков</h1>
       <section class="index__slider slider">
+        <h2 class="page__hidden">Специальные предложения</h2>
         <ul class="slider__list">
           <li class="slider__item slider__item--current">
-            <h2 class="slider__title heading heading--level_#">Декаф Флэт Уайт</h2>
-            <div class="promo__image-wrapper">
+            <h3 class="slider__title heading heading--level_#">Декаф Флэт Уайт</h3>
+            <div class="slider__image-wrapper">
               <picture>
                 <source type="image/webp" media="(min-width: 1440px)" srcset="#" width="600" height="600">
                 <source type="image/webp" media="(min-width: 768px)" srcset="#" width="476" height="476">
@@ -74,15 +75,15 @@
             <div class="slider__description content">
               <p>Свежесваренный кофе без кофеина из&nbsp;Эфиопии с&nbsp;натуральным фермерским молоком&nbsp;&mdash; то, что нужно для&nbsp;расслабления после тяжёлого рабочего дня</p>
             </div>
-            <div class="slider__order">
-              <del class="slider__price slide__price--old">295₽</del>
-              <ins class="slider__price">265₽</ins>
+            <div class="slider__inner">
+              <del class="slider__price slider__price--old">295₽</del>
+              <ins class="slider__price">225₽</ins>
               <a class="slider__button button" href="javascript:undefined;">Заказать</a>
             </div>
           </li>
           <li class="slider__item">
-            <h2 class="slider__title heading heading--level_#">Лавандовый Латте</h2>
-            <div class="promo__image-wrapper">
+            <h3 class="slider__title heading heading--level_#">Лавандовый Латте</h3>
+            <div class="slider__image-wrapper">
               <picture>
                 <source type="image/webp" media="(min-width: 1440px)" srcset="#" width="600" height="600">
                 <source type="image/webp" media="(min-width: 768px)" srcset="#" width="476" height="476">
@@ -97,15 +98,15 @@
             <div class="slider__description content">
               <p>Невероятное сочетание перуанской высокогорной арабики с&nbsp;молоком ламы и&nbsp;лавандовым сиропом унесёт вас прямо на&nbsp;вершину Радужных гор</p>
             </div>
-            <div class="slider__order">
-              <del class="slider__price slide__price--old">285₽</del>
+            <div class="slider__inner">
+              <del class="slider__price slider__price--old">285₽</del>
               <ins class="slider__price">265₽</ins>
               <a class="slider__button button" href="javascript:undefined;">Заказать</a>
             </div>
           </li>
           <li class="slider__item">
-            <h2 class="slider__title heading heading--level_#">Тройной Эспрессо</h2>
-            <div class="promo__image-wrapper">
+            <h3 class="slider__title heading heading--level_#">Тройной Эспрессо</h3>
+            <div class="slider__image-wrapper">
               <picture>
                 <source type="image/webp" media="(min-width: 1440px)" srcset="#" width="600" height="600">
                 <source type="image/webp" media="(min-width: 768px)" srcset="#" width="476" height="476">
@@ -120,15 +121,15 @@
             <div class="slider__description content">
               <p>Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из&nbsp;Колумбии покажет вам, что такое настоящая бодрость</p>
             </div>
-            <div class="slider__order">
-              <del class="slider__price slide__price--old">395₽</del>
+            <div class="slider__inner">
+              <del class="slider__price slider__price--old">395₽</del>
               <ins class="slider__price">375₽</ins>
               <a class="slider__button button" href="javascript:undefined;">Заказать</a>
             </div>
           </li>
         </ul>
         <ol class="slider__pagination pagination">
-          <!-- Для активации текущего состояния добавить класс pagination__button--current -->
+          <!-- Для активации текущего состояния добавить класс "pagination__button--current" -->
           <li class="pagination__item">
             <a class="pagination__button pagination__button--current" href="javascript:undefined;">
               <span class="page__hidden">Cлайдер 1</span>
@@ -179,11 +180,107 @@
       <section class="index__catalog catalog">
         <h2 class="catalog__title">Каталог</h2>
         <p class="catalog__text">Каталог кофейных напитков</p>
+        <form class="catalog__filters filters" method="get" action="https://echo.htmlacademy.ru/">
+          <div class="filters__container" role="group" aria-labelledby="pseudolegend-range">
+            <div class="filters__title heading heading--level_#" id="pseudolegend-range">Цена:</div>
+            <div class="filters__range range">
+              <div class="range__scale">
+                <div class="range__bar">
+                  <button class="range__toggle range__toggle--min" type="button">
+                    <span class="page__hidden">Изменить минимальную цену.</span>
+                  </button>
+                  <button class="range__toggle range__toggle--max" type="button">
+                    <span class="page__hidden">Изменить максимальную цену.</span>
+                  </button>
+                </div>
+              </div>
+              <div class="range__inputs">
+                <label class="range__label">
+                  <span class="page__hidden">Минимальная цена</span>
+                  <input class="range__input" type="number" value="0" placeholder="0" name="min-price">
+                </label>
+                <span class="range__inputs-divider">–</span>
+                <label class="range__label">
+                  <span class="page__hidden">Максимальная цена</span>
+                  <input class="range__input" type="number" value="900" name="max-price">
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="filters__container" role="group" aria-labelledby="pseudolegend-radio">
+            <div class="filters__title heading heading--level_#" id="pseudolegend-radio">Наличие молока</div>
+            <ul class="filters__container filters__list filters__radio">
+              <li class="filters__item">
+                <label class="filters__control control">
+                  <input class="control__input control__input-radio" type="radio" name="milk-type" value="any" checked>
+                  <span class="control__label heading heading--level_#">Неважно</span>
+                </label>
+              </li>
+              <li class="filters__item">
+                <label class="filters__control control">
+                  <input class="control__input control__input-radio" type="radio" name="milk-type" value="animal-milk">
+                  <span class="control__label heading heading--level_#">Только животное</span>
+                </label>
+              </li>
+              <li class="filters__item">
+                <label class="filters__control control">
+                  <input class="control__input control__input-radio" type="radio" name="milk-type" value="plant-milk">
+                  <span class="control__label heading heading--level_#">Только растительное</span>
+                </label>
+              </li>
+              <li class="filters__item">
+                <label class="filters__control control">
+                  <input class="control__input control__input-radio" type="radio" name="milk-type" value="no-milk" disabled>
+                  <span class="control__label heading heading--level_#">Без молока</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="filters__container" role="group" aria-labelledby="pseudolegend-checkbox">
+            <div class="filters__title heading heading--level_#" id="pseudolegend-checkbox">Страна произрастания</div>
+            <ul class="filters__container filters__list filters__checkbox">
+              <li class="filters__item">
+                <label class="filters____control-wrapper control">
+                  <input class="control__input control__input-checkbox" type="checkbox" name="Brasil" checked>
+                  <span class="control__label heading heading--level_7">Бразилия</span>
+                </label>
+              </li>
+              <li class="filters__item">
+                <label class="filters____control-wrapper control">
+                  <input class="control__input control__input-checkbox" type="checkbox" name="Ethiopia">
+                  <span class="control__label heading heading--level_7">Эфиопия</span>
+                </label>
+              </li>
+              <li class="filters__item">
+                <label class="filters____control-wrapper control">
+                  <input class="control__input control__input-checkbox" type="checkbox" name="Colombia">
+                  <span class="control__label heading heading--level_7">Колумбия</span>
+                </label>
+              </li>
+              <li class="filters__item">
+                <label class="filters____control-wrapper control">
+                  <input class="control__input control__input-checkbox" type="checkbox" name="Costa-Rica">
+                  <span class="control__label heading heading--level_7">Коста-Рика</span>
+                </label>
+              </li>
+              <li class="filters__item">
+                <label class="filters____control-wrapper control">
+                  <input class="control__input control__input-checkbox" type="checkbox" name="Peru" disabled>
+                  <span class="control__label heading heading--level_7">Перу</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+          <div class="filters__buttons-container">
+            <button class="filters__button button" type="submit">Применить</button>
+            <button class="filters__button button" type="submit">Сбросить</button>
+          </div>
+        </form>
         <div class="catalog__sorting sorting">
-          <p class="sorting__title">Сортировка:</p>
           <form class="sorting__form" action="#" autocomplete="off">
-            <select class="sorting__select" name="housing-type" id="housing-type">
-              <option class="sorting__item" value="by-default">по&nbsp;умолчанию</option>
+            <label class="sorting__title" for="sorting-type">Сортировка:</label>
+            <select class="sorting__select" name="sorting" id="sorting-type">
+              <option value="by-default" selected>по&nbsp;умолчанию</option>
               <option value="expensive-first">сначала дорогие</option>
               <option value="cheap-first">сначала дешёвые</option>
               <option value="high-rating">высокий рейтинг</option>
@@ -342,7 +439,9 @@
           </li>
         </ul>
       </section>
-      <section class="index__map"></section>
+      <section class="index__map">
+
+      </section>
     </main>
 
     <footer class="main-footer">
